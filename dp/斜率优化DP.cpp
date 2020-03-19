@@ -1,3 +1,4 @@
+//DTOJ 1099
 #include<iostream>
 using namespace std;
 long long n,l,r,x[1000010],c[1000010],p[1000010],sp[1000010],s[1000010];
