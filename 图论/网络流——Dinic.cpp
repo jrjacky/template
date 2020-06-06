@@ -1,7 +1,7 @@
+//Luogu 2756
 #include<iostream>
 #include<cstring>
 #include<cstdio>
-//Luogu 2756
 #include<queue>
 using namespace std;
 const int inf=1<<29;
