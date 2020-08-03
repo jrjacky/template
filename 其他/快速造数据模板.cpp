@@ -31,6 +31,12 @@ int main()
 		if(i<10) number="00",number+=(char)(i+'0');
 		else if(i<100) number="0",number+=(char)(i/10+'0'),number+=(char)(i%10+'0');
 		else number="100";
+		/*
+		if(i<10) number="000",number+=(char)(i+'0');
+		else if(i<100) number="00",number+=(char)(i/10+'0'),number+=(char)(i%10+'0');
+		else if(i<1000) number="0",number+=(char)(i/100+'0'),number+=(char)((i/10)%10+'0'),number+=(char)(i%10+'0');
+		else number="1000"
+		*/
 		filename="***"+number+".in";
 		FILE *fp;
 		fp=fopen("infilenumber.txt","w");
