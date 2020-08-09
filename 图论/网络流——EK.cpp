@@ -1,11 +1,12 @@
-//Luogu 2740 
 #include<iostream>
 #include<cstring>
+#include<cstdio>
 #include<queue>
 using namespace std;
-const int inf=1<<29,N=2010,M=20010;
-int n,m,s,t,tot,maxflow,head[2010],ver[20010],edge[20010],nxt[20010],v[2010],minc[2010],pre[2010];
-int add(int x,int y,int z)
+const int inf=1<<29;
+int n,m,s,t,tot,head[210],ver[10010],nxt[10010],v[210],pre[210];
+long long maxflow,edge[10010],minc[210];
+void add(int x,int y,int z)
 {
 	ver[++tot]=y,edge[tot]=z,nxt[tot]=head[x],head[x]=tot;
 	ver[++tot]=x,edge[tot]=0,nxt[tot]=head[y],head[y]=tot;
@@ -34,7 +35,7 @@ int bfs()
 }
 void EdmondsKarp()
 {
-	int x=t;
+	long long x=t;
 	while(x!=s){
 		int i=pre[x];
 		edge[i]-=minc[t];
@@ -46,14 +47,14 @@ void EdmondsKarp()
 int main()
 {
 	memset(head,0,sizeof(head));
-	cin>>m>>n;
-	s=1,t=n,tot=1,maxflow=0;
+	scanf("%d%d%d%d",&n,&m,&s,&t);
+	tot=1,maxflow=0;
 	for(int i=0;i<m;i++){
-		int x,y,c;
-		cin>>x>>y>>c;
+		int x,y;
+		long long c;
+		scanf("%d%d%lld",&x,&y,&c);
 		add(x,y,c);
 	}
 	while(bfs()) EdmondsKarp();
-	cout<<maxflow;
-	getchar();getchar();
+	printf("%lld",maxflow);
 }
